@@ -1,0 +1,19 @@
+/*
+	=> OR8WAY gate:
+	=> z = for i, 0..7 OR8WAY(xi)
+
+*/
+
+CHIP OR8WAY {
+    IN x[8];
+    OUT z;
+
+    PARTS:
+    OR(x=x[0],y=x[1],z=or12);
+    OR(x=x[2],y=x[3],z=or34);
+    OR(x=x[4],y=x[5],z=or56);
+    OR(x=x[6],y=x[7],z=or78);
+    OR(x=or12,y=or34,z=or1234);
+    OR(x=or56,y=or78,z=or5678);
+    OR(x=or1234,y=or5678,z=z);
+}

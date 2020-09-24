@@ -11,7 +11,7 @@ CHIP MUX {
     PARTS:
 
     NOT(in=s,out=nots);
-    AND(x=x, y=s, z=xands);
-    AND(x=y, y=nots, z=yandnots);
-    OR(x=xands,y=yandnots,z=z);
+    AND(x=x, y=nots, z=xandnots);
+    AND(x=y, y=s, z=yands);
+    OR(x=xandnots,y=yands,z=z);
 }

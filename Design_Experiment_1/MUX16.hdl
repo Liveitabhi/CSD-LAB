@@ -1,0 +1,29 @@
+/*
+	=> MUX16
+	=> zi = MUX16(xi,yi,s) where s is sector
+    => for i, 0..15 z[i] = MUX(x[i],y[i])
+*/
+
+CHIP MUX16 {
+    IN x[16], y[16], s;
+    OUT z[16];
+
+    PARTS:
+    
+    MUX(x=x[0], y=y[0], s=s, z=z[0]);
+    MUX(x=x[1], y=y[1], s=s, z=z[1]);
+    MUX(x=x[2], y=y[2], s=s, z=z[2]);
+    MUX(x=x[3], y=y[3], s=s, z=z[3]);
+    MUX(x=x[4], y=y[4], s=s, z=z[4]);
+    MUX(x=x[5], y=y[5], s=s, z=z[5]);
+    MUX(x=x[6], y=y[6], s=s, z=z[6]);
+    MUX(x=x[7], y=y[7], s=s, z=z[7]);
+    MUX(x=x[8], y=y[8], s=s, z=z[8]);
+    MUX(x=x[9], y=y[9], s=s, z=z[9]);
+    MUX(x=x[10], y=y[10], s=s, z=z[10]);
+    MUX(x=x[11], y=y[11], s=s, z=z[11]);
+    MUX(x=x[12], y=y[12], s=s, z=z[12]);
+    MUX(x=x[13], y=y[13], s=s, z=z[13]);
+    MUX(x=x[14], y=y[14], s=s, z=z[14]);
+    MUX(x=x[15], y=y[15], s=s, z=z[15]);
+}
