@@ -1,0 +1,17 @@
+/*
+	=> MUX
+	=> z = MUX(x,y,s) where s is selector
+    => MUX(x,y,s) = (x AND s) OR (y AND (NOT s))
+*/
+
+CHIP MUX {
+    IN x,y,s;
+    OUT z;
+
+    PARTS:
+
+    NOT(in=s,out=nots);
+    AND(x=x, y=s, z=xands);
+    AND(x=y, y=nots, z=yandnots);
+    OR(x=xands,y=yandnots,z=z);
+}

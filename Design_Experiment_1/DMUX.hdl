@@ -1,0 +1,16 @@
+/*
+	=> DMUX
+	=> x,y = DMUX(z,s) where s is selector
+    => x = NOT s AND z
+    => y = s AND z
+*/
+
+CHIP DMUX {
+    IN z, s;
+    OUT x, y;
+
+    PARTS:
+    NOT(in=s, out=nots);
+    AND(x=nots, y=z, z=x);
+    AND(x=s, y=z, z=y);
+}
