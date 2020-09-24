@@ -1,0 +1,15 @@
+/*
+	=> AND16 gate:
+    => zi = xi AND16 yi
+	=> for i, 0..15 z[i] = x[i] AND y[i]
+*/
+
+CHIP AND16 {
+    IN x[16],y[16];
+    OUT z[16];
+
+    PARTS:
+
+    AND8(x=x[0..7],y=y[0..7],z=z[0..7]);
+    AND8(x=x[8..15],y=y[8..15],z=z[8..15]);
+}
