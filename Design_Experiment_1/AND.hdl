@@ -1,0 +1,15 @@
+/*
+	=> AND gate:
+	=> z = x AND y
+    => x AND y = NOT (Nand(a,b))
+*/
+
+CHIP AND {
+    IN x,y;
+    OUT z;
+
+    PARTS:
+
+    Nand(a=x, b=y, out=nandxy);
+    NOT(in=nandxy,out=z);
+}
