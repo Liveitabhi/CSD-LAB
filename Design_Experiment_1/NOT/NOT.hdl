@@ -1,6 +1,7 @@
 /*
 	=> NOT gate:
 	=> out = NOT in
+    => NOT a = Nand(a,a)
 */
 
 CHIP NOT {
