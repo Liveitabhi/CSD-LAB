@@ -1,0 +1,17 @@
+/**
+ * 4-way demultiplexor:
+ * {x1, x2, x3, x4} = {z, 0, 0, 0} if s == 00
+ *                    {0, z, 0, 0} if s == 01
+ *                    {0, 0, z, 0} if s == 10
+ *                    {0, 0, 0, z} if s == 11
+ */
+
+CHIP DMUX4WAY {
+    IN z, s[2];
+    OUT x1, x2, x3, x4;
+
+    PARTS:    
+    DMUX(z=z, s=s[1], x=outx1, y=outx2);
+    DMUX(z=outx1, s=s[0], x=x1, y=x2);
+    DMUX(z=outx2, s=s[0], x=x3, y=x4);
+}
