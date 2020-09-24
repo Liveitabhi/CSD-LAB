@@ -1,0 +1,21 @@
+/*
+	=> OR8 gate:
+	=> for i, 0..7 z[i] = x[i] OR y[i]
+*/
+
+
+CHIP OR8 {
+    IN x[8],y[8];
+    OUT z[8];
+
+    PARTS:
+
+    OR(x=x[0],y=y[0],z=z[0]);
+    OR(x=x[1],y=y[1],z=z[1]);
+    OR(x=x[2],y=y[2],z=z[2]);
+    OR(x=x[3],y=y[3],z=z[3]);
+    OR(x=x[4],y=y[4],z=z[4]);
+    OR(x=x[5],y=y[5],z=z[5]);
+    OR(x=x[6],y=y[6],z=z[6]);
+    OR(x=x[7],y=y[7],z=z[7]);
+}
