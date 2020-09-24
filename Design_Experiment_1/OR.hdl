@@ -1,0 +1,16 @@
+
+/*
+	=> OR gate:
+	=> z = x OR y
+    => x OR y = Nand( NOT(x), NOT(y))
+*/
+
+CHIP OR {
+    IN x, y;
+    OUT z;
+
+    PARTS:
+    NOT(in=x, out=notx);
+    NOT(in=y, out=noty);
+    Nand(a=notx, b=noty, out=z);
+}
