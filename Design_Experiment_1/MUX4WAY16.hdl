@@ -1,0 +1,19 @@
+/*
+	=> MUX4WAY16
+	=> z =  x1 if s = 00
+            x2 if s = 01
+            x3 if s = 10
+            x4 if s = 11
+*/
+
+CHIP MUX4WAY16 {
+    IN x1[16], x2[16], x3[16], x4[16], s[2];
+    OUT z[16];
+
+    PARTS:
+
+    MUX16(x=x1, y=x2, s=s[0], z=out12);
+    MUX16(x=x3, y=x4, s=s[0], z=out34);
+    MUX16(x=out12, y=out34, s=s[1], z=z);
+    
+}

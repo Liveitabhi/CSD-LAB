@@ -1,0 +1,27 @@
+/*
+	=> MUX8WAY16
+	=> z =  x1 if s = 000
+            x2 if s = 001
+            x3 if s = 010
+            x4 if s = 011
+            x5 if s = 100
+            x6 if s = 101
+            x7 if s = 110
+            x8 if s = 111
+*/
+
+CHIP MUX8WAY16 {
+    IN x1[16], x2[16], x3[16], x4[16], x5[16], x6[16], x7[16], x8[16], s[3];
+    OUT z[16];
+
+    PARTS:
+
+    MUX16(x=x1, y=x2, s=s[0], z=out12);
+    MUX16(x=x3, y=x4, s=s[0], z=out34);
+    MUX16(x=out12, y=out34, s=s[1], z=out1234);
+    MUX16(x=x5, y=x6, s=s[0], z=out56);
+    MUX16(x=x7, y=x8, s=s[0], z=out78);
+    MUX16(x=out56, y=out78, s=s[1], z=out5678);
+    MUX16(x=out1234, y=out5678, s=s[2], z=z);
+    
+}
