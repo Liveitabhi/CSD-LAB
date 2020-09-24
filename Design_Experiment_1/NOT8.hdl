@@ -1,0 +1,18 @@
+/*
+    => NOT8 gate:
+    => for i, 0..7 out[i] = NOT in[i]
+*/
+CHIP NOT8 {
+    IN in[8];
+    OUT out[8];
+
+    PARTS:
+     NOT(in=in[0], out=out[0]);
+     NOT(in=in[1], out=out[1]);
+     NOT(in=in[2], out=out[2]);
+     NOT(in=in[3], out=out[3]);
+     NOT(in=in[4], out=out[4]);
+     NOT(in=in[5], out=out[5]);
+     NOT(in=in[6], out=out[6]);
+     NOT(in=in[7], out=out[7]);
+}

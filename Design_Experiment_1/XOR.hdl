@@ -1,0 +1,19 @@
+
+
+/*
+    => XOR gate:
+	=> z = x XOR y
+    => x XOR y = NOT(OR(AND(x,y), NOT(OR(x,y))))
+*/
+
+CHIP XOR {
+    IN x, y;
+    OUT z;
+
+    PARTS:
+    AND(x=x, y=y, z=xy);
+    OR(x=x, y=y, z=xory);
+    NOT(in=xory, out=notxory);
+    OR(x=xy, y=notxory, z=xly);
+    NOT(in=xly, out=z);
+}

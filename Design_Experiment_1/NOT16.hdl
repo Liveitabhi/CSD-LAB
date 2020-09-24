@@ -1,0 +1,13 @@
+/*
+    => NOT16 gate:
+    => out[0..7] = NOT8(in[0..7])
+    => out[8..15] = NOT8(in[8..15])
+*/
+CHIP NOT16 {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+     NOT8(in=in[0..7], out=out[0..7]);
+     NOT8(in=in[8..15], out=out[8..15]);
+}
